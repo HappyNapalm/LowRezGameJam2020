@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 # Declare member variables here. Examples:
 onready var timer = get_node("creep")
-var wait_amount = 1
+var wait_amount = 2
 var up_creep = 5
 
 var velocity = Vector2()
