@@ -26,5 +26,5 @@ func _on_Crow_animation_change():
 
 
 func _on_falling_cheese_scene_change():
-	get_tree().change_scene("res://Main.tscn")	#Brute changing the scene
+	get_tree().change_scene("res://FoxScene.tscn")	#Brute changing the scene
 	pass # Replace with function body.

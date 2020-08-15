@@ -8,6 +8,8 @@ var trunk_thickness = 12
 var cheese_thickness = 7
 var magic_offset = trunk_thickness + cheese_thickness
 var velocity = Vector2()	# The player's movement vector
+
+signal grounded
 #signal win_game
 #signal lost_game
 
@@ -19,7 +21,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
 	elif Input.is_action_pressed("ui_left"):
@@ -28,18 +30,23 @@ func _process(delta):
 #		velocity.y -= 1
 #	elif Input.is_action_pressed("ui_down"):
 #		velocity.y += 1
-	else:
-		velocity.x = 0
+#	else:
+#		velocity.x = 0
 #		velocity.y = 0
 #	velocity.y = 9.8
-	velocity = velocity.normalized() * speed
-	position += velocity * delta
-	position.x = clamp(position.x, magic_offset, screen_size.x - magic_offset)
+#	velocity = velocity.normalized() * speed
+#	position += velocity * delta
+	set_applied_force(velocity.normalized())
+#	position.x = clamp(position.x, magic_offset, screen_size.x - magic_offset)
 	position.y = clamp(position.y, 0, screen_size.y)
+	
+	if(position.y == screen_size.y):
+		print("grounded")
+		emit_signal("grounded")
 
 
 func _on_trunks_stopped():
-	velocity.y = 9.8
+	set_gravity_scale(1)
 
 
 func _on_Player_body_entered(body):

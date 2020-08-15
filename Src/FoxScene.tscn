@@ -39,12 +39,14 @@ texture = ExtResource( 8 )
 [node name="Fox" type="AnimatedSprite" parent="."]
 position = Vector2( 97.2893, 33.4002 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 script = ExtResource( 3 )
 
 [node name="FoxHappy" type="AnimatedSprite" parent="."]
 position = Vector2( 32.5885, 37.6319 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 script = ExtResource( 11 )
 
@@ -61,6 +63,7 @@ position = Vector2( 32.7869, 32.6241 )
 texture = ExtResource( 7 )
 [connection signal="change_sprite" from="Fox" to="." method="_on_Fox_change_sprite"]
 [connection signal="hide" from="Fox" to="FoxSurprise" method="_on_Fox_hide"]
+[connection signal="next_scene" from="FoxHappy" to="." method="_on_FoxHappy_next_scene"]
 [connection signal="Happy" from="FoxSurprise" to="Fox" method="_on_FoxSurprise_Happy"]
 [connection signal="Happy" from="FoxSurprise" to="FoxHappy" method="_on_FoxSurprise_Happy"]
 [connection signal="timeout" from="FoxSurprise/SupriseTimer" to="FoxSurprise" method="_on_SupriseTimer_timeout"]

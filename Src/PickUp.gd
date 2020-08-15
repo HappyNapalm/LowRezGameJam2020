@@ -1,6 +1,5 @@
-extends AnimatedSprite
-var happy = 0
-signal next_scene
+extends Sprite
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,15 +13,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if(happy):
-		position.x -= 1
-	if(position.x < -16):
-		emit_signal("next_scene")
-	pass
+#func _process(delta):
+#	pass
 
 
-func _on_FoxSurprise_Happy():
+func _on_FinalFox_change_sprite():
+	position.x = 32
 	show()
-	happy = 1
 	pass # Replace with function body.

@@ -21,3 +21,8 @@ func _on_Fox_change_sprite():
 	$Fox.hide()
 	$FoxSurprise.show()
 	pass # Replace with function body.
+
+
+func _on_FoxHappy_next_scene():
+	get_tree().change_scene("res://Main.tscn")	#Brute changing the scene
+	pass # Replace with function body.

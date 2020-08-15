@@ -8,7 +8,11 @@ extents = Vector2( 8.86607, 6.52436 )
 
 [node name="Player" type="RigidBody2D"]
 position = Vector2( 29.1252, 32.4061 )
+mass = 0.2
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
+angular_damp = -0.5
 script = ExtResource( 2 )
 
 [node name="cheese" type="Sprite" parent="."]
