@@ -46,7 +46,10 @@ func _process(_delta):
 
 
 func _on_trunks_stopped():
-	set_gravity_scale(1)
+	print("stopped")
+	set_sleeping(true)
+	set_gravity_scale(2)
+	
 
 
 func _on_Player_body_entered(body):

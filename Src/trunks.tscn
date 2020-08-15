@@ -9,8 +9,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 256.43 )
 
-[node name="trunks" type="KinematicBody2D"]
+[node name="trunks" type="RigidBody2D"]
 position = Vector2( 31.7425, 256.274 )
+mass = 255.0
+gravity_scale = -0.05
 script = ExtResource( 2 )
 
 [node name="wood" type="Sprite" parent="."]

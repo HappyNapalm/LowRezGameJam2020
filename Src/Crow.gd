@@ -2,7 +2,7 @@ extends AnimatedSprite
 
 signal animation_change
 var loop_count = 0
-const happy_loops = 5
+const happy_loops = 3
 
 # Declare member variables here. Examples:
 # var a = 2

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 signal touched
 
 # Declare member variables here. Examples:
@@ -32,29 +32,34 @@ func placeBranches():
 	$lil_branch7.position = $Branch17.position
 	$lil_branch8.position = $Branch18.position
 
-func creepUp(amount):
-	velocity.y -= amount
-	velocity = move_and_slide(velocity)
+#func creepUp(amount):
+#	velocity.y -= amount
+#	set_applied_force(velocity)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	placeBranches()
 	timer.set_wait_time(wait_amount)
 	timer.start()
 
+func stopMoving():
+	set_gravity_scale(0)
+	set_sleeping(true)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if(position.y < -max_creep):
 		timer.stop()
 		velocity.y = 0
-		creepUp(0)
+		stopMoving()
+#		creepUp(0)
 		emit_signal("stopped")
 
 
 
 # We are moving up at a rate. However the refresh rate is wait_amount
 func _on_creep_timeout():
-	creepUp(up_creep)
+#	creepUp(up_creep)
 	pass
 
 

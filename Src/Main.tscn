@@ -57,11 +57,11 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
+[connection signal="stopped" from="trunks" to="." method="_on_trunks_stopped"]
 [connection signal="stopped" from="trunks" to="Player" method="_on_trunks_stopped"]
 [connection signal="stopped" from="trunks" to="background" method="_on_trunks_stopped"]
-[connection signal="stopped" from="trunks" to="." method="_on_trunks_stopped"]
 [connection signal="touched" from="trunks" to="." method="_on_trunks_touched"]
-[connection signal="grounded" from="Player" to="FinalFox" method="_on_Player_grounded"]
 [connection signal="grounded" from="Player" to="." method="_on_Player_grounded"]
+[connection signal="grounded" from="Player" to="FinalFox" method="_on_Player_grounded"]
 [connection signal="change_sprite" from="FinalFox" to="PickUp" method="_on_FinalFox_change_sprite"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

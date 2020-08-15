@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Src"
+config/name="The Crow and the Fox"
 run/main_scene="res://CrowScene.tscn"
 config/icon="res://icon.png"
 

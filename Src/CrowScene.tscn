@@ -32,6 +32,7 @@ texture = ExtResource( 6 )
 position = Vector2( 97.1507, 32.2403 )
 z_index = 2
 frames = SubResource( 1 )
+frame = 2
 playing = true
 script = ExtResource( 8 )
 

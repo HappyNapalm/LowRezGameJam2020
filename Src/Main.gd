@@ -16,6 +16,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if(stopped):
+		$Timer.start()
+		print($Timer.get_time_left())
+		pass
 	if(outtaTime && !ground):
 		get_tree().change_scene("res://CrowScene.tscn")	#Brute changing the scene
 	pass
@@ -38,9 +42,6 @@ func _on_trunks_touched():
 
 func _on_trunks_stopped():
 	stopped = 1
-#	$Timer.wait_time(10)	#Wait 10 seconds
-	$Timer.start()
-	print($Timer.get_time_left())
 	pass # Replace with function body.
 
 
