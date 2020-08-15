@@ -1,10 +1,13 @@
 extends KinematicBody2D
-
+signal touched
 
 # Declare member variables here. Examples:
 onready var timer = get_node("creep")
 var wait_amount = .1
 var up_creep = .5
+var max_creep = 256.274 - 69 #position - screen size - magic number 
+
+signal stopped
 
 var velocity = Vector2()
 
@@ -29,6 +32,9 @@ func placeBranches():
 	$lil_branch7.position = $Branch17.position
 	$lil_branch8.position = $Branch18.position
 
+func creepUp(amount):
+	velocity.y -= amount
+	velocity = move_and_slide(velocity)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	placeBranches()
@@ -37,12 +43,91 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-
+func _process(_delta):
+	if(position.y < -max_creep):
+		timer.stop()
+		velocity.y = 0
+		creepUp(0)
+		emit_signal("stopped")
 
 
 
 # We are moving up at a rate. However the refresh rate is wait_amount
 func _on_creep_timeout():
-	velocity.y -= up_creep
-	velocity = move_and_slide(velocity)
+	creepUp(up_creep)
+	pass
+
+
+func _on_lil_branch1_touched(body):
+	if body.get_name() == "Player":
+		emit_signal("touched")
+		print("touch Player")
+	print("touched",body.get_name())
+
+
+func _on_lil_branch2_touched():
+	emit_signal("touched")
+
+
+func _on_lil_branch3_touched():
+	emit_signal("touched")
+
+
+func _on_lil_branch4_touched():
+	emit_signal("touched")
+
+
+func _on_lil_branch5_touched():
+	emit_signal("touched")
+
+
+func _on_lil_branch6_touched():
+	emit_signal("touched")
+
+
+func _on_lil_branch7_touched():
+	emit_signal("touched")
+
+
+func _on_lil_branch8_touched():
+	emit_signal("touched")
+
+
+func _on_med_branch1_touched():
+	emit_signal("touched")
+
+
+func _on_med_branch2_touched():
+	emit_signal("touched")
+
+
+func _on_med_branch3_touched():
+	emit_signal("touched")
+
+
+func _on_med_branch4_touched():
+	emit_signal("touched")
+
+
+func _on_med_branch5_touched():
+	emit_signal("touched")
+
+
+func _on_big_branch1_touched():
+	emit_signal("touched")
+
+
+func _on_big_branch2_touched():
+	emit_signal("touched")
+
+
+func _on_big_branch3_touched():
+	emit_signal("touched")
+
+
+func _on_big_branch4_touched():
+	emit_signal("touched")
+
+
+func _on_med_branch6_touched():
+	emit_signal("touched")

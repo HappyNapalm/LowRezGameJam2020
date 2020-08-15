@@ -6,17 +6,17 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.86607, 6.52436 )
 
-[node name="Player" type="Area2D"]
-position = Vector2( 30.2191, 32.5436 )
+[node name="Player" type="RigidBody2D"]
+position = Vector2( 29.1252, 32.4061 )
+gravity_scale = 0.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="cheese" type="Sprite" parent="."]
-position = Vector2( 0.742249, 5.39134 )
+position = Vector2( 0.356182, 4.0401 )
+scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -7.62939e-06, 0 )
+position = Vector2( -0.0788651, -0.0845547 )
+scale = Vector2( 0.75, 0.75 )
 shape = SubResource( 1 )

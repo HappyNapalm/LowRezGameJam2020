@@ -23,3 +23,9 @@ func _ready():
 func _on_creep_timeout():
 	velocity.y -= up_creep
 	velocity = move_and_slide(velocity)
+
+
+func _on_trunks_stopped():
+	velocity.y = 0
+	velocity = move_and_slide(velocity)
+

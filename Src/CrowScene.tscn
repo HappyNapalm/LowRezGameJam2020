@@ -1,0 +1,56 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Art/bin/Crow Frame 3 1.png" type="Texture" id=1]
+[ext_resource path="res://Art/bin/Crow Frame 1 1.png" type="Texture" id=2]
+[ext_resource path="res://Art/bin/Crow Frame 2 1.png" type="Texture" id=3]
+[ext_resource path="res://Art/bin/Crow Frame 4 1.png" type="Texture" id=4]
+[ext_resource path="res://CrowScene.gd" type="Script" id=5]
+[ext_resource path="res://Art/bin/Sky.png" type="Texture" id=6]
+[ext_resource path="res://Art/bin/Crow Frame 5 1.png" type="Texture" id=7]
+[ext_resource path="res://Crow.gd" type="Script" id=8]
+[ext_resource path="res://CrowSurprise.gd" type="Script" id=9]
+[ext_resource path="res://Art/bin/Cheese version 1.png" type="Texture" id=10]
+[ext_resource path="res://falling_cheese.gd" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="CrowScene" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 31.7011, 384.445 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 6 )
+
+[node name="Crow" type="AnimatedSprite" parent="."]
+position = Vector2( 97.1507, 32.2403 )
+z_index = 2
+frames = SubResource( 1 )
+playing = true
+script = ExtResource( 8 )
+
+[node name="Cheese" type="Sprite" parent="Crow"]
+show_behind_parent = true
+position = Vector2( -3.34595, 8.23615 )
+z_index = 1
+texture = ExtResource( 10 )
+
+[node name="CrowSurprise" type="Sprite" parent="."]
+position = Vector2( 31.6577, 32.6872 )
+texture = ExtResource( 7 )
+script = ExtResource( 9 )
+
+[node name="falling_cheese" type="Sprite" parent="CrowSurprise"]
+show_behind_parent = true
+position = Vector2( -2.05902, 9.52303 )
+texture = ExtResource( 10 )
+script = ExtResource( 11 )
+[connection signal="cheese_fall" from="." to="CrowSurprise/falling_cheese" method="_on_CrowScene_cheese_fall"]
+[connection signal="animation_change" from="Crow" to="." method="_on_Crow_animation_change"]
+[connection signal="scene_change" from="CrowSurprise/falling_cheese" to="." method="_on_falling_cheese_scene_change"]

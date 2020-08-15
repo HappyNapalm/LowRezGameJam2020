@@ -14,3 +14,18 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+#func reset_instances():
+#	$background.position = $bgStart.position
+#	$Player.position = $PlayerStart.positon
+#	$trunks.position = $trStart.position
+#
+#
+#func _on_Player_lost_game():
+#	print("lost")
+#	reset_instances()
+#	$Main.reload_current_scene()
+
+
+func _on_trunks_touched():
+	print("lost")

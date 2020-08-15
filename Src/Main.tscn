@@ -16,3 +16,15 @@ script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 30.8969, 9.27221 )
+
+[node name="PlayerStart" type="Position2D" parent="."]
+position = Vector2( 30.897, 9.272 )
+
+[node name="bgStart" type="Position2D" parent="."]
+position = Vector2( 31.742, 256.274 )
+
+[node name="trStart" type="Position2D" parent="."]
+position = Vector2( 31.742, 256.274 )
+[connection signal="stopped" from="trunks" to="Player" method="_on_trunks_stopped"]
+[connection signal="stopped" from="trunks" to="background" method="_on_trunks_stopped"]
+[connection signal="touched" from="trunks" to="." method="_on_trunks_touched"]

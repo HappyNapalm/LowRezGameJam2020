@@ -65,10 +65,10 @@ position = Vector2( -20.7724, 129.387 )
 position = Vector2( 20.3386, 149.808 )
 
 [node name="Branch15" type="Position2D" parent="."]
-position = Vector2( -20.3903, 178.184 )
+position = Vector2( -20.3903, 193.184 )
 
 [node name="Branch16" type="Position2D" parent="."]
-position = Vector2( 20.2003, 191.576 )
+position = Vector2( 20.2003, 174.576 )
 
 [node name="Branch17" type="Position2D" parent="."]
 position = Vector2( -20.4325, 222.463 )
@@ -139,3 +139,21 @@ position = Vector2( -16.2761, 129.503 )
 position = Vector2( 12.4027, 198.936 )
 rotation = 3.14159
 [connection signal="timeout" from="creep" to="." method="_on_creep_timeout"]
+[connection signal="touched" from="lil_branch1" to="." method="_on_lil_branch1_touched"]
+[connection signal="touched" from="lil_branch2" to="." method="_on_lil_branch2_touched"]
+[connection signal="touched" from="lil_branch3" to="." method="_on_lil_branch3_touched"]
+[connection signal="touched" from="lil_branch4" to="." method="_on_lil_branch4_touched"]
+[connection signal="touched" from="lil_branch5" to="." method="_on_lil_branch5_touched"]
+[connection signal="touched" from="lil_branch6" to="." method="_on_lil_branch6_touched"]
+[connection signal="touched" from="lil_branch7" to="." method="_on_lil_branch7_touched"]
+[connection signal="touched" from="lil_branch8" to="." method="_on_lil_branch8_touched"]
+[connection signal="touched" from="med_branch1" to="." method="_on_med_branch1_touched"]
+[connection signal="touched" from="med_branch2" to="." method="_on_med_branch2_touched"]
+[connection signal="touched" from="med_branch3" to="." method="_on_med_branch3_touched"]
+[connection signal="touched" from="med_branch4" to="." method="_on_med_branch4_touched"]
+[connection signal="touched" from="med_branch5" to="." method="_on_med_branch5_touched"]
+[connection signal="touched" from="med_branch6" to="." method="_on_med_branch6_touched"]
+[connection signal="touched" from="big_branch1" to="." method="_on_big_branch1_touched"]
+[connection signal="touched" from="big_branch2" to="." method="_on_big_branch2_touched"]
+[connection signal="touched" from="big_branch3" to="." method="_on_big_branch3_touched"]
+[connection signal="touched" from="big_branch4" to="." method="_on_big_branch4_touched"]

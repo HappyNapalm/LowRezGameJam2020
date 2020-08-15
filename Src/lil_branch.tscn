@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Art/bin/Branch short 1.png" type="Texture" id=1]
+[ext_resource path="res://lil_branch.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.32523, 3.55533 )
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -4.34151, 0.0790672 )
+b = Vector2( 5.59972, 0.663872 )
 
-[node name="lil_branch" type="KinematicBody2D"]
+[node name="lil_branch" type="StaticBody2D"]
 position = Vector2( 32.5716, 37.7354 )
+collision_mask = 0
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 20.9608, 21.1098 )
@@ -16,5 +20,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 5.70187, 0.804893 )
+position = Vector2( 5.55568, 0.293213 )
+rotation = 3.14159
 shape = SubResource( 1 )

@@ -16,13 +16,15 @@ _global_script_class_icons={
 [application]
 
 config/name="Src"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://CrowScene.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=64
 window/size/height=64
+window/size/test_width=640
+window/size/test_height=640
 window/per_pixel_transparency/allowed=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
